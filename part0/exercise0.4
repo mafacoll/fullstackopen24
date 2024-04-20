@@ -7,7 +7,8 @@ sequenceDiagram
     activate server
     server-->>browser: 302 Found 
     deactivate server
-
+    
+    A new note has been sent to the server, and it has responded with a redirect, the server is asking the browser to make a new HTTP GET request to a different address.  
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
     server-->>browser: HTML document
@@ -22,7 +23,8 @@ sequenceDiagram
     activate server
     server-->>browser: the JavaScript file
     deactivate server
-    
+
+    The JavaScript file contains code that asks the server to fetch the json. 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     activate server
     server-->>browser: [{ "content": https://studies.cs.helsinki.fi/exampleapp/spa", date: "2024-04-20T11:52:02.216Z"}, ... ]
